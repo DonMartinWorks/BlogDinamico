@@ -14,7 +14,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://kit.fontawesome.com/02d4e31007.js" crossorigin="anonymous"></script>
-    {{-- @livewireStyles --}}
+    @livewireStyles
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
     <!-- Sweetalert 2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    {{-- @livewireScripts --}}
+    @livewireScripts
 </body>
 
 </html>
