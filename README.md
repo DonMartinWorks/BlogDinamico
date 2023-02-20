@@ -266,6 +266,36 @@ _Comandos que podrian ser necesarios_
 <br />
 <br />
 
+###### Laravel Lang Instalacion (Hoy 20/02/23 - pagina caida)
+
+<p align="left">
+
+1. Creacion de los archivos base de composer.
+    ```
+    composer require laravel-lang/publisher laravel-lang/lang laravel-lang/attributes --dev
+    ```
+
+2. Creacion de los archivos vwndor.
+    ```
+    php artisan vendor:publish --provider="LaravelLang\Publisher\ServiceProvider"
+    ```
+
+3. Creacion de los archivos de traducción (añadir una localizacion ESPAÑOL).
+    ```
+    php artisan lang:add es
+    ```
+
+4. Reemplazar el locale de `en` a `es`
+    ```
+    ruta-proyecto/config/app.php (linea 85)
+    ```
+
+
+</p>
+
+<br />
+<br />
+
 #### Programas que utilicé
 
 _Lista de programas utilizados en este proyecto_
