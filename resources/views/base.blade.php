@@ -9,7 +9,7 @@
                 </svg>
 
                 <!-- livewire component -->
-                <section id="hola">
+                <section id="greetings">
                     <div x-data="{ open: false, focus: true }" @keydown.escape="onEscape"
                         @close-popover-group.window="onClosePopoverGroup">
                         <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
@@ -43,9 +43,9 @@
                                     <a href="#" class="font-medium text-gray-200 hover:text-red-300">Link
                                         1</a>
                                     <a href="#" class="font-medium text-gray-200 hover:text-red-300">Link
-                                        1</a>
+                                        2</a>
                                     <a href="#" class="font-medium text-gray-200 hover:text-red-300">Link
-                                        1</a>
+                                        3</a>
                                 </div>
                                 <!-- Aqui botones edit y add -->
                             </nav>
@@ -306,7 +306,7 @@
     </div>
 
     <!-- Modal - Project -->
-    <div x-data="{ open: true }" @keydown.window.escape="open = false" x-show="open" class="relative z-10"
+    <div x-data="{ open: false }" @keydown.window.escape="open = false" x-show="open" class="relative z-10"
         aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
         <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
             x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
