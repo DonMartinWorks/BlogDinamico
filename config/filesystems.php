@@ -39,10 +39,41 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        /**
+         * Esta seccion tiene los discos para guardar los archivos estaticos y dinamicos
+         * que corresponden a las imagenes de hero, projects y el archivo PDF que simula
+         * a un archivo curriculum vitae.
+         */
+
+        'hero' => [
+            'driver' => 'local',
+            'root' => storage_path('app/img/hero'),
+            'url' => env('APP_URL') . '/hero',
+            'visibility' => 'hero',
+            'throw' => false,
+        ],
+
+        'projects' => [
+            'driver' => 'local',
+            'root' => storage_path('app/img/projects'),
+            'url' => env('APP_URL') . '/projects',
+            'visibility' => 'projects',
+            'throw' => false,
+        ],
+
+        'cv' => [
+            'driver' => 'local',
+            'root' => storage_path('app/cv'),
+            'url' => env('APP_URL') . '/cv',
+            'visibility' => 'projects',
+            'throw' => false,
+        ],
+
 
         's3' => [
             'driver' => 's3',
@@ -70,7 +101,10 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+    //  public_path('storage') => storage_path('app/public'),
+        public_path('hero') => storage_path('app/img/hero'),
+        public_path('projects') => storage_path('app/img/projects'),
+        public_path('cv') => storage_path('app/cv'),
     ],
 
 ];
