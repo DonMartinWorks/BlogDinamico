@@ -3,6 +3,7 @@
 namespace Tests\Feature\Navigation;
 
 use Tests\TestCase;
+use App\Models\User;
 use Livewire\Livewire;
 use App\Models\Navitem;
 use App\Http\Livewire\Navigation\Navigation;
@@ -33,7 +34,22 @@ class NavigationTest extends TestCase
         $items = Navitem::factory(3)->create();
 
         Livewire::test(Navigation::class)
-        ->assertSee($items->first()->label)
-        ->assertSee($items->first()->link);
+            ->assertSee($items->first()->label)
+            ->assertSee($items->first()->link);
+    }
+
+    /**
+     * Esta prueba se corrobora que solo el usuario autenticado pueda acceder a los botones de la vista.
+     *
+     * @test
+     */
+    public function only_admin_can_see_navigation_actions()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Navigation::class)
+            ->assertStatus(200)
+            ->assertSee(__('Edit'))
+            ->assertSee(__('New'));
     }
 }

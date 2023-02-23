@@ -26,9 +26,22 @@
                         </div>
                     </div>
                     <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8 text-lg">
-                         <x-navigation.links class="text-gray-200 hover:text-red-300" :items="$items" />
+                        <x-navigation.links class="text-gray-200 hover:text-blue-400" :items="$items" />
                     </div>
+
                     <!-- Aqui botones edit y add -->
+                    {{-- @auth --}}
+                    <div class="hidden md:flex items-center justify-center space-x-2 ml-4 md:pb-1 lg:p-3">
+                        <x-actions.action class="text-emerald-300 hover:text-purple-400" title="{{ __('Edit') }}">
+                            <x-icons.pencil />
+                        </x-actions.action>
+
+                        <x-actions.action class="text-emerald-300 hover:text-purple-400" title="{{ __('New') }}">
+                            <x-icons.add-square />
+                        </x-actions.action>
+                    </div>
+                    {{-- @endauth --}}
+
                 </nav>
             </div>
 
@@ -58,8 +71,20 @@
                         </div>
                     </div>
                     <div class="px-2 pt-2 pb-3 space-y-1">
-                        <x-navigation.links class="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50" :items="$items" />
+                        <x-navigation.links
+                            class="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                            :items="$items" />
+
                         <!-- Aqui botones edit y add -->
+                        <x-actions.action class="block px-2 text-emerald-600 hover:text-purple-600"
+                            title="{{ __('Edit') }}">
+                            <x-icons.pencil />
+                        </x-actions.action>
+
+                        <x-actions.action class="block px-2 text-emerald-600 hover:text-purple-600"
+                            title="{{ __('New') }}">
+                            <x-icons.add-square />
+                        </x-actions.action>
                     </div>
                 </div>
             </div>
