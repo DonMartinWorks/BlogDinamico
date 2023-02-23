@@ -30,8 +30,8 @@
                     </div>
 
                     <!-- Aqui botones edit y add -->
-                    {{-- @auth --}}
                     <div class="hidden md:flex items-center justify-center space-x-2 ml-4 md:pb-1 lg:p-3">
+                        {{-- auth --}}
                         <x-actions.action class="text-emerald-300 hover:text-purple-400" title="{{ __('Edit') }}">
                             <x-icons.pencil />
                         </x-actions.action>
@@ -39,8 +39,8 @@
                         <x-actions.action class="text-emerald-300 hover:text-purple-400" title="{{ __('New') }}">
                             <x-icons.add-square />
                         </x-actions.action>
+                        {{-- auth --}}
                     </div>
-                    {{-- @endauth --}}
 
                 </nav>
             </div>
@@ -76,6 +76,8 @@
                             :items="$items" />
 
                         <!-- Aqui botones edit y add -->
+
+                        {{-- auth --}}
                         <x-actions.action class="block px-2 text-emerald-600 hover:text-purple-600"
                             title="{{ __('Edit') }}">
                             <x-icons.pencil />
@@ -85,6 +87,7 @@
                             title="{{ __('New') }}">
                             <x-icons.add-square />
                         </x-actions.action>
+                        {{-- auth --}}
                     </div>
                 </div>
             </div>

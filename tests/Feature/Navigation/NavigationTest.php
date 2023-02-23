@@ -52,4 +52,20 @@ class NavigationTest extends TestCase
             ->assertSee(__('Edit'))
             ->assertSee(__('New'));
     }
+
+    /**
+     * Esta prueba se corrobora que solo el usuario autenticado pueda acceder a los botones de la vista.
+     *
+     * @test
+     */
+    public function guests_cannot_see_navigation_actions()
+    {
+        $this->markTestSkipped('Uncomment This!');
+        // Livewire::test(Navigation::class)
+        //     ->assertStatus(200)
+        //     ->assertDontSee(__('Edit'))
+        //     ->assertDontSee(__('New'));
+
+        // $this->assertGuest();
+    }
 }
