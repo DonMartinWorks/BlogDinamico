@@ -100,7 +100,7 @@
             @if ($addNewItem)
                 Crear
             @else
-                Editar
+                <x-forms.edit-items :items="$items" />
             @endif
         </x-modal.slideover>
     </section>
