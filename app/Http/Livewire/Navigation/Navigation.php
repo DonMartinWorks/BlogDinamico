@@ -49,6 +49,7 @@ class Navigation extends Component
         $this->reset('openSlideOver');
 
         //Notificacion
+        $this->dispatchBrowserEvent('notify', ['message' => __('Menu items have been updated!')]);
 
     }
 
