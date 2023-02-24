@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('navitems', function (Blueprint $table) {
             $table->id();
-            $table->string('label', 100);
-            $table->string('link', 255);
+            $table->string('label', 20);
+            $table->string('link', 40);
             $table->timestamps();
         });
     }

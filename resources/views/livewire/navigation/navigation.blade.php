@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8 text-lg">
-                        <x-navigation.links class="text-gray-200 hover:text-blue-400" :items="$items" />
+                        <x-navigation.links class="text-gray-200 hover:text-purple-400" :items="$items" />
                     </div>
 
                     <!-- Aqui botones edit y add -->

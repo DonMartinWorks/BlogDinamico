@@ -11,6 +11,11 @@ class Navigation extends Component
     public $openSlideOver = false;
     public $addNewItem = false;
 
+    protected $rules = [
+        'items.*.label' => 'required|max:20',
+        'items.*.link'  => 'required|max:40',
+    ];
+
     public function mount()
     {
        $this->items = Navitem::all();
@@ -25,6 +30,26 @@ class Navigation extends Component
         //El evento cuando sea disparado cambiara el estado de addNewItem de false a true para abrir el modal en el lado derecho.
         $this->addNewItem = $addNewItem;
         $this->openSlideOver = true;
+    }
+
+    /**
+     * Este metodo actualiza de manera dinamica el item
+     */
+    public function edit()
+    {
+        //Validar los datos
+        $this->validate();
+
+        //Actualizar el item
+        foreach ($this->items as $item) {
+            $item->save();
+        }
+
+        //Cerrar el SlideOver
+        $this->reset('openSlideOver');
+
+        //Notificacion
+
     }
 
     public function render()
