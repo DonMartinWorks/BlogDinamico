@@ -76,5 +76,9 @@
     "Download File": "Descargar Archivo",
     "Download CV": "Descargar CV",
     "Update": "Actualizar",
-    "Menu items have been updated!": "¡Los elementos del menú han sido actualizados!"
+    "Menu items have been updated!": "¡Los elementos del menú han sido actualizados!",
+    "Item": "Elemento",
+    "Label": "Etiqueta",
+    "Link": "Enlace",
+    "There are no items to show!": "¡No hay elementos para mostrar!"
 }
