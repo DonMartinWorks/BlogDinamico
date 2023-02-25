@@ -99,4 +99,20 @@ class NavigationTest extends TestCase
             'link' => '#contactme'
         ]);
     }
+
+    /**
+     * Esta prueba se corrobora que solo el usuario autenticado pueda eliminar los navitems
+     * y estos cambios se vean reflejados en la vista.
+     *
+     * @test
+     */
+    public function only_admin_can_delete_an_item()
+    {
+        $user = User::factory()->create();
+        $item = Navitem::factory()->create();
+
+        Livewire::actingAs($user)->test(Navigation::class)->call('deleteItem', $item);
+
+        $this->assertDatabaseMissing('navitems', ['id' => $item->id]);
+    }
 }
