@@ -26,13 +26,14 @@
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                             <div class="rounded-md shadow">
                                 <a href="#"
-                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-emerald-600 hover:bg-green-400  md:py-4 md:text-lg md:px-10" title="{{__('Download CV')}}">
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-emerald-600 hover:bg-green-400  md:py-4 md:text-lg md:px-10"
+                                    title="{{ __('Download CV') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{__('Download File')}}
+                                    {{ __('Download File') }}
                                 </a>
                             </div>
                             <!-- Boton Edit -->
@@ -57,7 +58,7 @@
             <!-- livewire component -->
             <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-none">
                 <div class="flex items-center">
-                    <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="proyectos">Proyectos</h2>
+                    <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">Proyectos</h2>
                     <!-- Boton add -->
                 </div>
                 <div class="space-y-12 lg:space-y-6 lg:grid lg:grid-cols-3 lg:gap-x-6">
@@ -119,7 +120,7 @@
         <div class="max-w-screen-xl px-4 py-3 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <!-- livewire component -->
-                <div class="px-5 py-2" id="{{ __('contact-me') }}">
+                <div class="px-5 py-2" id="{{ __('contact') }}">
 
                     <a href="mailto:tavo@cdp.com"
                         class="flex text-base leading-6 text-gray-400 hover:text-red-400 space-y-1">
