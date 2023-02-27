@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="flex justify-center text-center">
-                    <div class="mt-3 mb-1 w-0">
+                    <div class="mt-5 mb-1">
                         <!-- delete action -->
                         <x-actions.delete eventName="deleteItem" :object="$item" />
                     </div>
