@@ -1,9 +1,9 @@
 <x-main-layout>
     <!-- hero -->
-    <div class="relative overflow-hidden bg-gray-800">
+    <div class="relative overflow-hidden bg-gray-900">
         <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-gray-800 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-800 transform translate-x-1/2"
+            <div class="relative z-10 pb-8 bg-gray-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-900 transform translate-x-1/2"
                     fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                     <polygon points="50,0 100,0 50,100 0,100"></polygon>
                 </svg>
@@ -13,20 +13,20 @@
 
                 <!-- livewire component -->
                 <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                    <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                    <div class="sm:justify-center lg:justify-end">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-300 sm:text-5xl md:text-6xl">
                             <span class="block xl:inline">Titulo........</span>
                         </h1>
                         <p
-                            class="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consequuntur obcaecati
                             molestias molestiae ea accusamus harum ad sint illum, maiores in explicabo perspiciatis
                             placeat tempore, reprehenderit dolores autem, inventore eaque?
                         </p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
                             <div class="rounded-md shadow">
                                 <a href="#"
-                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-emerald-600 hover:bg-green-400  md:py-4 md:text-lg md:px-10"
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-emerald-600 hover:bg-purple-400 hover:text-white md:py-4 md:text-lg md:px-10"
                                     title="{{ __('Download CV') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -113,23 +113,26 @@
     </div>
 
     <!-- Footer -->
-    <section class="bg-gray-800">
+    <section class="bg-gray-900">
         <div class="flex justify-center pt-10">
-            <h2 class="text-2xl font-extrabold text-gray-200">Contáctame</h2>
+            <h2 class="text-2xl font-extrabold text-gray-500">Contáctame</h2>
         </div>
         <div class="max-w-screen-xl px-4 py-3 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <!-- livewire component -->
                 <div class="px-5 py-2" id="{{ __('contact') }}">
 
-                    <a href="mailto:tavo@cdp.com"
-                        class="flex text-base leading-6 text-gray-400 hover:text-red-400 space-y-1">
-                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                    <a href="mailto:email@email.com"
+                        class="flex text-base leading-6 text-emerald-600 hover:text-white space-y-1">
+                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-6 h-6">
+                            <path
+                                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                            <path
+                                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                         </svg>
-                        <span class="pl-3 text-lg">tavo@cdp.com</span>
+
+                        <span class="pl-3 text-lg">email@email.com</span>
                     </a>
                     <!-- Boton edit -->
 
@@ -139,15 +142,15 @@
 
             <!-- livewire component -->
             <div class="flex justify-center mt-8 space-x-6">
-                <a href="#" target="_blank" class="text-4xl text-gray-400 hover:text-red-400">
+                <a href="#" target="_blank" class="text-4xl text-emerald-600 hover:text-purple-400">
                     <span class="sr-only">Linkedin</span>
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="#" target="_blank" class="text-4xl text-gray-400 hover:text-red-400">
+                <a href="#" target="_blank" class="text-4xl text-emerald-600 hover:text-purple-400">
                     <span class="sr-only">Github</span>
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="#" target="_blank" class="text-4xl text-gray-400 hover:text-red-400">
+                <a href="#" target="_blank" class="text-4xl text-emerald-600 hover:text-purple-400">
                     <span class="sr-only">Twitter</span>
                     <i class="fa-brands fa-twitter"></i>
                 </a>
@@ -158,15 +161,13 @@
 
             <!-- livewire component  -->
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-                <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-red-300">Link 1</a>
-                <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-red-300">Link 2</a>
-                <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-red-300">Link 3</a>
+                <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-purple-400">Link 1</a>
+                <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-purple-400">Link 2</a>
+                <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-purple-400">Link 3</a>
                 <!-- Boton Logout -->
             </nav>
         </div>
     </section>
-
-
 
     <!-- Modal - Project -->
     <div x-data="{ open: false }" @keydown.window.escape="open = false" x-show="open" class="relative z-10"

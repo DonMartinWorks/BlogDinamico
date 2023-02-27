@@ -11,7 +11,7 @@
                             </a>
                             <div class="-mr-2 flex items-center md:hidden">
                                 <button type="button"
-                                    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                                    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500"
                                     @click="open = !open" @mousedown="if (open) $event.preventDefault()"
                                     aria-expanded="false" :aria-expanded="open.toString()">
                                     <span class="sr-only">Open main menu</span>
@@ -25,8 +25,9 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8 text-lg">
-                        <x-navigation.links class="text-gray-200 hover:text-purple-400" :items="$items" />
+                        <x-navigation.links class="text-gray-300 hover:text-purple-400" :items="$items" />
                     </div>
 
                     <!-- Aqui botones edit y add -->
@@ -43,7 +44,6 @@
                         </x-actions.action>
                         {{-- auth --}}
                     </div>
-
                 </nav>
             </div>
 
@@ -58,6 +58,7 @@
                         <div>
                             <img class="h-8 w-auto" src="{{ asset('/hero/coding.png') }}" alt="Logo">
                         </div>
+
                         <div class="-mr-2">
                             <button type="button"
                                 class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -72,6 +73,7 @@
                             </button>
                         </div>
                     </div>
+
                     <div class="px-2 pt-2 pb-3 space-y-1">
                         <x-navigation.links
                             class="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50"

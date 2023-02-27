@@ -25,8 +25,8 @@
                         class="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
                         <button type="button"
                             class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                            @click="open = false">
-                            <span class="sr-only">{{ __('Close panel') }}</span>
+                            @click="open = false" title="{{ __('Close Dashboard') }}">
+                            <span class="sr-only"></span>
                             <svg class="h-6 w-6" x-description="Heroicon name: outline/x"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                 stroke="currentColor" aria-hidden="true">
