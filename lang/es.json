@@ -70,15 +70,20 @@
     "Your email address is unverified.": "Su dirección de correo electrónico no está verificada.",
     "Greetings": "Saludos",
     "Projects": "Proyectos",
-    "Contact Me": "Contactame",
+    "Contact Me": "Contáctame",
     "New": "Nuevo",
     "Edit": "Editar",
+    "Delete": "Eliminar",
     "Download File": "Descargar Archivo",
     "Download CV": "Descargar CV",
     "Update": "Actualizar",
     "Menu items have been updated!": "¡Los elementos del menú han sido actualizados!",
+    "Menu item have been deleted!": "El elemento del menú ha sido eliminado",
     "Item": "Elemento",
     "Label": "Etiqueta",
     "Link": "Enlace",
-    "There are no items to show!": "¡No hay elementos para mostrar!"
+    "There are no items to show!": "¡No hay elementos para mostrar!",
+    "Are you sure?": "¿Está seguro?",
+    "You will not be able to revert this!": "¡Esta acción es irreversible!",
+    "Yes, delete it!": "¡Sí, Eliminar!"
 }
