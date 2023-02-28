@@ -25,17 +25,17 @@ class DatabaseSeeder extends Seeder
 
         Navitem::factory()->create([
             'label' => __('Greetings'),
-            'link' => '#greetings'
+            'link' => __('#greetings')
         ]);
 
         Navitem::factory()->create([
             'label' => __('Projects'),
-            'link' => '#projects'
+            'link' => __('#projects')
         ]);
 
         Navitem::factory()->create([
             'label' => __('Contact Me'),
-            'link' => '#contact'
+            'link' => __('#contact')
         ]);
     }
 }

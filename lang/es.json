@@ -1,4 +1,10 @@
 {
+    "greetings": "saludos",
+    "projects": "proyectos",
+    "contact": "contacto",
+    "#greetings": "#saludos",
+    "#projects": "#proyectos",
+    "#contact": "#contacto",
     "(and :count more error)": "(y :count error más)",
     "(and :count more errors)": "(y :count errores más)",
     "A new verification link has been sent to the email address you provided during registration.": "Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.",
@@ -72,6 +78,7 @@
     "Projects": "Proyectos",
     "Contact Me": "Contáctame",
     "New": "Nuevo",
+    "Create": "Crear",
     "Edit": "Editar",
     "Delete": "Eliminar",
     "Download File": "Descargar Archivo",
@@ -86,5 +93,7 @@
     "Are you sure?": "¿Está seguro?",
     "You will not be able to revert this!": "¡Esta acción es irreversible!",
     "Yes, delete it!": "¡Sí, Eliminar!",
-    "Close Dashboard": "Cerrar Panel"
+    "Close Dashboard": "Cerrar Panel",
+    "The item has been created successfully!": "¡El elemento ha sido creado con éxito!",
+    "These are the static links for the 3 sections of portfolio (Home, Projects and Contact):": "Estos son los enlaces estáticos para las 3 secciones del portafolio (Inicio, Proyectos y Contacto):"
 }
