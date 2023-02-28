@@ -41,4 +41,68 @@ class ItemTest extends TestCase
 
         $this->assertDatabaseHas('navitems', ['label' => 'New Label', 'link' => '#newlabel']);
     }
+
+    /**
+     * Esta prueba se corrobora que label sea obligatorio.
+     *
+     * @test
+     */
+    public function label_is_required()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Item::class)
+            ->set('item.label', '')
+            ->set('item.link', '#mylink')
+            ->call('save')
+            ->assertHasErrors(['item.label' => 'required']);
+    }
+
+    /**
+     * Esta prueba se corrobora que label no supere 20 caracteres.
+     *
+     * @test
+     */
+    public function label_of_must_have_a_maxium_of_20_characters()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Item::class)
+            ->set('item.label', 'QWERTYUIOP0987654321Z')
+            ->set('item.link', '#mylink')
+            ->call('save')
+            ->assertHasErrors(['item.label' => 'max']);
+    }
+
+    /**
+     * Esta prueba se corrobora que link sea obligatorio.
+     *
+     * @test
+     */
+    public function link_is_required()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Item::class)
+            ->set('item.label', 'Mi link')
+            ->set('item.link', '')
+            ->call('save')
+            ->assertHasErrors(['item.link' => 'required']);
+    }
+
+    /**
+     * Esta prueba se corrobora que link no supere 40 caracteres.
+     *
+     * @test
+     */
+    public function link_of_must_have_a_maxium_of_40_characters()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Item::class)
+            ->set('item.label', 'QWERTYUIOP0987654321Z')
+            ->set('item.link', '#QWERTYUIOP0987654321ZQWERTYUIOP0987654321Z')
+            ->call('save')
+            ->assertHasErrors(['item.link' => 'max']);
+    }
 }
