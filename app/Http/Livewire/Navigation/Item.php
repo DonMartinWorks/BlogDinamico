@@ -32,6 +32,11 @@ class Item extends Component
         //Guardar el item
         $this->item->save();
 
+        $this->emitTo('navigation.navigation', 'itemAdded');
+
+        //Limpiar
+        $this->mount();
+
         //Notificación
         $this->notify(__('The item has been created successfully!'));
     }
