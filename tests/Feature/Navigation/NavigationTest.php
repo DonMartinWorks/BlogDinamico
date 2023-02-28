@@ -117,7 +117,7 @@ class NavigationTest extends TestCase
     }
 
     /**
-     * Esta prueba se corrobora que label sea obligatorio
+     * Esta prueba se corrobora que label sea obligatorio.
      *
      * @test
      */
@@ -135,7 +135,7 @@ class NavigationTest extends TestCase
     }
 
     /**
-     * Esta prueba se corrobora que link sea obligatorio
+     * Esta prueba se corrobora que link sea obligatorio.
      *
      * @test
      */
@@ -153,7 +153,7 @@ class NavigationTest extends TestCase
     }
 
     /**
-     * Esta prueba se corrobora que link no supere 20 caracteres
+     * Esta prueba se corrobora que link no supere 20 caracteres.
      *
      * @test
      */
@@ -171,7 +171,7 @@ class NavigationTest extends TestCase
     }
 
     /**
-     * Esta prueba se corrobora que label no supere 40 caracteres
+     * Esta prueba se corrobora que label no supere 40 caracteres.
      *
      * @test
      */

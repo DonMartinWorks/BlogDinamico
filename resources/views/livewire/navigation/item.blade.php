@@ -1,3 +1,1 @@
-<div>
-    <p>Nuevo item</p>
-</div>
+<x-forms.new-items />
