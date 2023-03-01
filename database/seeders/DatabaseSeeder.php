@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Navitem;
 use Illuminate\Database\Seeder;
+use App\Models\PersonalInformation;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,5 +38,8 @@ class DatabaseSeeder extends Seeder
             'label' => __('Contact Me'),
             'link' => __('#contact')
         ]);
+
+        //PersonalInformation
+        PersonalInformation::factory()->create();
     }
 }
