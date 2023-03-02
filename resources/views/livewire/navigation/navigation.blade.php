@@ -39,7 +39,7 @@
 
                     <x-actions.action wire:click.prevent="openSlide(true)"
                         class="text-emerald-300 hover:text-purple-400" title="{{ __('New') }}">
-                        <x-icons.add-square />
+                        <x-icons.add />
                     </x-actions.action>
                     {{-- auth --}}
                 </div>
@@ -88,7 +88,7 @@
 
                     <x-actions.action wire:click.prevent="openSlide(true)"
                         class="block px-2 text-emerald-600 hover:text-purple-600" title="{{ __('New') }}">
-                        <x-icons.add-square />
+                        <x-icons.add-circle />
                     </x-actions.action>
                     {{-- auth --}}
                 </div>

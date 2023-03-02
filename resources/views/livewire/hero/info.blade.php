@@ -21,8 +21,12 @@
                     {{ __('Download File') }}
                 </a>
             </div>
+
             <!-- Boton Edit -->
+
         </div>
     </div>
+
     <!-- slideover edit hero -->
+
 </main>
