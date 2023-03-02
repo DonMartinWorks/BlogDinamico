@@ -15,7 +15,7 @@ class Navigation extends Component
     public $openSlideOver = false;
     public $addNewItem = false;
 
-    protected $listeners = ['deleteItem'];
+    protected $listeners = ['deleteItem', 'itemAdded' => 'updateDataAfterAddItem'];
 
     protected $rules = [
         'items.*.label' => 'required|max:20',
@@ -36,6 +36,15 @@ class Navigation extends Component
         //El evento cuando sea disparado cambiara el estado de addNewItem de false a true para abrir el modal en el lado derecho.
         $this->addNewItem = $addNewItem;
         $this->openSlideOver = true;
+    }
+
+    /**
+     * Para reiniciar el listado de los items
+     */
+    public function updateDataAfterAddItem()
+    {
+        $this->mount();
+        $this->reset('openSlideOver');
     }
 
     /**
