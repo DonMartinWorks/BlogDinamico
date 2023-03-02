@@ -5,15 +5,14 @@ namespace App\Http\Livewire\Navigation;
 use App\Models\Navitem;
 use Livewire\Component;
 use App\Http\Livewire\Traits\Notification;
-
+use App\Http\Livewire\Traits\SlideOver;
 
 class Navigation extends Component
 {
-    use Notification;
+    //Traits
+    use Notification, SlideOver;
 
     public $items;
-    public $openSlideOver = false;
-    public $addNewItem = false;
 
     protected $listeners = ['deleteItem', 'itemAdded' => 'updateDataAfterAddItem'];
 
@@ -27,16 +26,6 @@ class Navigation extends Component
         $this->items = Navitem::all();
     }
 
-    /**
-     * Este componente recibe TRUE al crear un nuevo item
-     * Este componente recibe FALSE al editar un item existente
-     */
-    public function openSlide($addNewItem = false)
-    {
-        //El evento cuando sea disparado cambiara el estado de addNewItem de false a true para abrir el modal en el lado derecho.
-        $this->addNewItem = $addNewItem;
-        $this->openSlideOver = true;
-    }
 
     /**
      * Para reiniciar el listado de los items

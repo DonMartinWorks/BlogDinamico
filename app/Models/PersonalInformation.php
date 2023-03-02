@@ -28,4 +28,19 @@ class PersonalInformation extends Model
             get: fn () => Storage::disk('cv')->url($this->cv ?? 'my-cv.pdf')
         );
     }
+
+    /**
+     * Esta funcion se encarga de de la imagen
+     * Por defecto el archivo para mostrar es: default-hero.jpg
+     * La imagen cuando es creada, es generada con una cadena aleatoria
+     * Es la portada visible para la vista.
+     *
+     * Si la imaen es nulo, declara al archivo con el archivo por defecto.
+     */
+    protected function imageUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => Storage::disk('hero')->url($this->image ?? 'default-hero.jpg'),
+        );
+    }
 }

@@ -46,7 +46,7 @@
 
             <x-inputs.img wire:model="imageFile" id="image">
                 <span class="w-24 rounded-lg overflow-hidden bg-gray-100">
-                    <img src="{{ $info->imageUrl }}" alt="Imagen Hero">
+                    <img src="{{ $info->imageUrl }}" alt="{{__('Hero Image')}}">
                 </span>
             </x-inputs.img>
 
