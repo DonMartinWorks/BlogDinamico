@@ -2,11 +2,15 @@
 
 namespace App\Http\Livewire\Hero;
 
-use App\Models\PersonalInformation;
 use Livewire\Component;
+use App\Models\PersonalInformation;
+use App\Http\Livewire\Traits\SlideOver;
+use App\Http\Livewire\Traits\Notification;
 
 class Info extends Component
 {
+    use Notification, SlideOver;
+
     public PersonalInformation $info;
 
     //Datos
