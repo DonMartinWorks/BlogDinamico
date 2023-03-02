@@ -6,7 +6,9 @@ use Tests\TestCase;
 use App\Models\User;
 use Livewire\Livewire;
 use App\Http\Livewire\Hero\Info;
+use Illuminate\Http\UploadedFile;
 use App\Models\PersonalInformation;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -39,8 +41,8 @@ class InfoTest extends TestCase
     }
 
     /**
-     * Esta prueba corrobora que solo el usuario admin pueda mirar los botones (enlaces) con
-     * las acciones para editar la informacion.
+     * Esta prueba corrobora que solo el usuario admin pueda mirar los botones
+     * (enlaces) con las acciones para editar la informacion.
      *
      * @test
      */
@@ -68,5 +70,32 @@ class InfoTest extends TestCase
 
         // ---  Para confirmar la visita como un visitante ---
         //     $this->assertGuest();
+    }
+
+    /**
+     * Esta prueba corrobora que solo el usuario admin pueda editar la informacion que
+     * se muestra en la vista.
+     *
+     * @test
+     */
+    public function only_user_admin_can_edit_the_hero_information()
+    {
+        $user = User::factory()->create();
+        $info = PersonalInformation::factory()->create();
+
+        //Archivos falsos para la prueba
+        $image = UploadedFile::fake()->image('hero.jpg');
+        $cv = UploadedFile::fake()->create('vitae.pdf');
+        Storage::fake('hero');
+        Storage::fake('cv');
+
+        Livewire::actingAs($user)->test(Info::class)
+            ->set('info.title', 'First Name')
+            ->set('info.description', 'Laravel lorem ipsum')
+            ->set('cvFile', $cv)
+            ->set('imageFile', $image)
+            ->call('edit');
+
+        $info->refresh();
     }
 }
