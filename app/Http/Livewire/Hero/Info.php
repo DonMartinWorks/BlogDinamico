@@ -11,6 +11,7 @@ class Info extends Component
 
     //Datos
     public $cvFile = null;
+    public $imageFile = null;
 
     public function mount()
     {
