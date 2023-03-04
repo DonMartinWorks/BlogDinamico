@@ -31,9 +31,9 @@
             <a href="{{ $info->cvUrl }}" class="text-gray-400 text-sm hover:text-gray-700"
                 target="_blank">{{ __('Open Current File') }}</a>
 
-            {{-- <div wire:loading wire:target="cvFile" class="mt-1 w-full text-indigo-700">
+            <div wire:loading wire:target="cvFile" class="mt-1 w-full text-indigo-700">
                 {{ __('Verifying file...') }}
-            </div> --}}
+            </div>
 
             @error('cvFile')
                 <div class="mt-1 text-red-600 text-sm">{{ $message }}</div>
@@ -46,13 +46,13 @@
 
             <x-inputs.img wire:model="imageFile" id="image">
                 <span class="w-24 rounded-lg overflow-hidden bg-gray-100">
-                    <img src="{{ $info->imageUrl }}" alt="{{__('Hero Image')}}">
+                    <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $info->imageUrl }}" alt="{{__('Hero Image')}}">
                 </span>
             </x-inputs.img>
 
-            {{-- <div wire:loading wire:target="imageFile" class="mt-1 w-full text-indigo-700">
+            <div wire:loading wire:target="imageFile" class="mt-1 w-full text-indigo-700">
                 {{ __('Verifying image...') }}
-            </div> --}}
+            </div>
 
             @error('imageFile')
                 <div class="mt-1 text-red-600 text-sm">{{ $message }}</div>
