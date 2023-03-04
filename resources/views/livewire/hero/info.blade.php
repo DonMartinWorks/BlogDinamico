@@ -10,7 +10,7 @@
 
         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
             <div class="rounded-md shadow">
-                <a href="#"
+                <a href="#" wire:click.prevent="download"
                     class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-emerald-600 hover:bg-purple-400 hover:text-white md:py-4 md:text-lg md:px-10"
                     title="{{ __('Download CV') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
@@ -33,6 +33,6 @@
 
         <!-- slideover edit hero -->
         <x-modal.slideover>
-            <x-forms.edit-hero :info="$info" />
+            <x-forms.edit-hero :info="$info" :imageFile="$imageFile" />
         </x-modal.slideover>
 </main>

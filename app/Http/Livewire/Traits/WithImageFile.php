@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Traits;
 
 use Illuminate\Support\Facades\Storage;
+use RuntimeException;
 
 /**
  * Este Trait tiene la funcion de eliminar los archvios que reciba, siempre y cuando exista realmente el archivo
@@ -19,9 +20,21 @@ trait WithImageFile
 
     public function updatedImageFile()
     {
+        $this->verifyTemporaryUrl();
+
         $this->validate([
             'imageFile' => 'image|max:1024',
         ]);
+    }
+
+    private function verifyTemporaryUrl()
+    {
+        //Para el error: This driver does not support creating temporary URLs
+        try {
+            $this->imageFile->temporaryUrl();
+        } catch (RuntimeException $exception) {
+            $this->reset('imageFile');
+        }
     }
 
     public function deleteFile($disk, $filename)

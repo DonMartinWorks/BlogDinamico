@@ -50,27 +50,27 @@ return [
          * a un archivo curriculum vitae.
          */
 
-        'hero' => [
+         'hero' => [
             'driver' => 'local',
             'root' => storage_path('app/img/hero'),
-            'url' => env('APP_URL') . '/hero',
-            'visibility' => 'hero',
+            'url' => env('APP_URL').'/hero',
+            'visibility' => 'public',
             'throw' => false,
         ],
 
         'projects' => [
             'driver' => 'local',
             'root' => storage_path('app/img/projects'),
-            'url' => env('APP_URL') . '/projects',
-            'visibility' => 'projects',
+            'url' => env('APP_URL').'/projects',
+            'visibility' => 'public',
             'throw' => false,
         ],
 
         'cv' => [
             'driver' => 'local',
             'root' => storage_path('app/cv'),
-            'url' => env('APP_URL') . '/cv',
-            'visibility' => 'projects',
+            'url' => env('APP_URL').'/cv',
+            'visibility' => 'public',
             'throw' => false,
         ],
 

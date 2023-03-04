@@ -3,11 +3,12 @@
 namespace App\Http\Livewire\Hero;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\PersonalInformation;
 use App\Http\Livewire\Traits\SlideOver;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Livewire\Traits\Notification;
 use App\Http\Livewire\Traits\WithImageFile;
-use Livewire\WithFileUploads;
 
 class Info extends Component
 {
@@ -39,6 +40,12 @@ class Info extends Component
         $this->info = PersonalInformation::first() ?? new PersonalInformation();
     }
 
+    //Para descargar el CV
+    public function download()
+    {
+        return Storage::disk('cv')->download($this->info->cv ?? 'my-cv.pdf');
+    }
+
     //Para editar los datos
     public function edit()
     {
@@ -58,6 +65,7 @@ class Info extends Component
          * 5- Este sera utilizado para que los visitantes puedan ver o descargar el PDF.
          * 6- El archivo por defecto no sera borrado
          */
+
         if ($this->cvFile) {
             # Elimina el archivo
             $this->deleteFile(disk: 'cv', filename: $this->info->cv);
