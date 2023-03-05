@@ -50,10 +50,12 @@ return [
          * a un archivo curriculum vitae.
          */
 
-         'hero' => [
+         // --- Discos --- //
+
+        'hero' => [
             'driver' => 'local',
             'root' => storage_path('app/img/hero'),
-            'url' => env('APP_URL').'/hero',
+            'url' => env('APP_URL') . '/hero',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -61,7 +63,7 @@ return [
         'projects' => [
             'driver' => 'local',
             'root' => storage_path('app/img/projects'),
-            'url' => env('APP_URL').'/projects',
+            'url' => env('APP_URL') . '/projects',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -69,10 +71,12 @@ return [
         'cv' => [
             'driver' => 'local',
             'root' => storage_path('app/cv'),
-            'url' => env('APP_URL').'/cv',
+            'url' => env('APP_URL') . '/cv',
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        /** ************************************************************************* */
 
 
         's3' => [
@@ -101,7 +105,7 @@ return [
     */
 
     'links' => [
-    //  public_path('storage') => storage_path('app/public'),
+        //  public_path('storage') => storage_path('app/public'),
         public_path('hero') => storage_path('app/img/hero'),
         public_path('projects') => storage_path('app/img/projects'),
         public_path('cv') => storage_path('app/cv'),
