@@ -214,6 +214,8 @@ return [
         'year'                     => 'año',
         'label'                    => 'etiqueta',
         'link'                     => 'enlace',
+        'cvFile'                   => 'Archivo del CV',
+        'imageFile'                => 'Archivo de Imagen',
     ],
 
     'custom' => [
