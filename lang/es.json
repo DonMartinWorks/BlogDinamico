@@ -95,5 +95,11 @@
     "Yes, delete it!": "¡Sí, Eliminar!",
     "Close Dashboard": "Cerrar Panel",
     "The item has been created successfully!": "¡El elemento ha sido creado con éxito!",
-    "These are the static links for the 3 sections of portfolio (Home, Projects and Contact):": "Estos son los enlaces estáticos para las 3 secciones del portafolio (Inicio, Proyectos y Contacto):"
+    "These are the static links for the 3 sections of portfolio (Home, Projects and Contact):": "Estos son los enlaces estáticos para las 3 secciones del portafolio (Inicio, Proyectos y Contacto):",
+    "Title": "Título",
+    "Description": "Descripción",
+    "Image": "Imagen",
+    "Open Current File": "Ver Archivo Actual",
+    "Select File": "Seleccionar Archivo",
+    "Information saved sucessfully!": "Información guardada exitosamente!"
 }
