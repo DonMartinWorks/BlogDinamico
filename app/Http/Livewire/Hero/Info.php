@@ -76,6 +76,7 @@ class Info extends Component
             # Elimina el archivo
             $this->deleteFile(disk: 'hero', filename: $this->info->image);
             $this->info->update(['image' => $this->imageFile->store('/', 'hero')]);
+            $this->emitTo('hero.image', 'heroImageUpdated');
         }
 
         # Seccion de eliminado/actualizacion de los archivos.
