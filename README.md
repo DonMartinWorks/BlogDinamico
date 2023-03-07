@@ -7,13 +7,6 @@ _Este proyecto es blog de presentación para demostrar a terceros las habilidade
 <br />
 <br />
 
-## Creación de archivos necesarios
-
-1. _Crea un archivo llamado <b>.env</b> tomando de ejemplo de archivo <b>.env.example</b> este archivo es necesario para el funcionamiento del proyecto._
-
-<br />
-<br />
-
 ### Levantar el servidor Local
 
 <p>Levantar estos comandos en 2 consolas <b>CMD</b> al mismo tiempo</p>
@@ -78,6 +71,93 @@ _Para la instalacion de este proyecto Laravel es necesario seguir los siguientes
     ```
     php artisan storage:link
     ```
+
+<br />
+<br />
+
+### Comandos SQL
+
+```
+php artisan migrate:rollback
+```
+
+<p>Regresa a la migracion anterior de la DB</p>
+
+<br />
+
+```
+php artisan migrate:refresh
+```
+
+<p>Limpia la DB</p>
+
+<br />
+
+```
+php artisan migrate:rollback --step=1
+```
+
+<p>Regresa a la migracion anterior de un paso de la DB</p>
+
+<br />
+<br />
+
+### Reinicio de la Base de Datos
+
+```
+php artisan migrate:fresh --seed
+```
+
+<p>Reinicia desde cero la DB y crea los seeders</p>
+
+<br />
+
+```
+php artisan migrate:refresh --seed
+```
+
+<p>Limpia la DB y crea los seeders</p>
+
+<br />
+<br />
+
+## Otros Comandos
+
+_Comandos que podrian ser necesarios_
+
+1. Generación de seeds
+
+    ```
+    php artisan db:seed
+    ```
+
+2. Limpieza de caché
+
+    ```
+    php artisan config:cache
+    ```
+
+3. Creacion de los links de los archivos estaticos
+
+    ```
+    php artisan storage:link
+    ```
+
+4. Creacion de un modelo con controller tipo resource, con migration y seeder para la DB.
+    ```
+    php artisan make:model Model -mcs --resource
+    ```
+
+<br />
+<br />
+<br />
+<br />
+
+# Testing
+
+## Creación de archivos necesarios
+
+1. _Crea un archivo llamado <b>.env</b> tomando de ejemplo de archivo <b>.env.example</b> este archivo es necesario para el funcionamiento del proyecto._
 
 <br />
 <br />
@@ -174,80 +254,6 @@ _O llamando por su nombre y ruta._
 
 <br />
 <br />
-
-### Comandos SQL
-
-```
-php artisan migrate:rollback
-```
-
-<p>Regresa a la migracion anterior de la DB</p>
-
-<br />
-
-```
-php artisan migrate:refresh
-```
-
-<p>Limpia la DB</p>
-
-<br />
-
-```
-php artisan migrate:rollback --step=1
-```
-
-<p>Regresa a la migracion anterior de un paso de la DB</p>
-
-<br />
-<br />
-
-### Reinicio de la Base de Datos
-
-```
-php artisan migrate:fresh --seed
-```
-
-<p>Reinicia desde cero la DB y crea los seeders</p>
-
-<br />
-
-```
-php artisan migrate:refresh --seed
-```
-
-<p>Limpia la DB y crea los seeders</p>
-
-<br />
-<br />
-
-## Otros Comandos
-
-_Comandos que podrian ser necesarios_
-
-1. Generación de seeds
-
-    ```
-    php artisan db:seed
-    ```
-
-2. Limpieza de caché
-
-    ```
-    php artisan config:cache
-    ```
-
-3. Creacion de los links de los archivos estaticos
-
-    ```
-    php artisan storage:link
-    ```
-
-4. Creacion de un modelo con controller tipo resource, con migration y seeder para la DB.
-    ```
-    php artisan make:model Model -mcs --resource
-    ```
-
 <br />
 <br />
 
@@ -271,16 +277,19 @@ _Comandos que podrian ser necesarios_
 <p align="left">
 
 1. Creacion de los archivos base de composer.
+
     ```
     composer require laravel-lang/publisher laravel-lang/lang laravel-lang/attributes --dev
     ```
 
 2. Creacion de los archivos vwndor.
+
     ```
     php artisan vendor:publish --provider="LaravelLang\Publisher\ServiceProvider"
     ```
 
 3. Creacion de los archivos de traducción (añadir una localizacion ESPAÑOL).
+
     ```
     php artisan lang:add es
     ```
@@ -289,7 +298,6 @@ _Comandos que podrian ser necesarios_
     ```
     ruta-proyecto/config/app.php (linea 85)
     ```
-
 
 </p>
 
