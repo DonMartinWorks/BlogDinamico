@@ -101,5 +101,7 @@
     "Image": "Imagen",
     "Open Current File": "Ver Archivo Actual",
     "Select File": "Seleccionar Archivo",
-    "Information saved sucessfully!": "Información guardada exitosamente!"
+    "Information saved sucessfully!": "Información guardada exitosamente!",
+    "There are no projects to show!": "No hay elementos para mostrar!",
+    "Close": "Cerrar"
 }

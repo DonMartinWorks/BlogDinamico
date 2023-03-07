@@ -38,4 +38,28 @@ class ProjectTest extends TestCase
             ->assertSee($projects->last()->name)
             ->assertSee($projects->last()->image);
     }
+
+    /**
+     * Prueba encargada de corroborar el cargar los proyectos.
+     *
+     * @test
+     */
+    public function user_can_see_all_project_info()
+    {
+        $project = ProjectModel::factory()->create([
+            'image' => 'myproject.jpg',
+            'video_link' => 'https://www.youtube.com/watch?v=S9F0TxFy3qE',
+            'url' => 'https://www.google.com/',
+            'repo_url' => 'https://github.com/DonMartinWorks',
+        ]);
+
+        Livewire::test(Project::class)
+            ->call('loadProject', $project->id)
+            ->assertSee($project->name)
+            ->assertSee($project->description)
+            ->assertSee($project->image)
+            ->assertSee($project->video_code)
+            ->assertSee($project->url)
+            ->assertSee($project->repo_url);
+    }
 }
