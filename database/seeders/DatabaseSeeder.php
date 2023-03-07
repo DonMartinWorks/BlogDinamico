@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Navitem;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 use App\Models\PersonalInformation;
 
@@ -41,5 +42,8 @@ class DatabaseSeeder extends Seeder
 
         //PersonalInformation
         PersonalInformation::factory()->create();
+
+        //Project
+        Project::factory(3)->create();
     }
 }
