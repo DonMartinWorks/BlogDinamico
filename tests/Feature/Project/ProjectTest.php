@@ -3,6 +3,7 @@
 namespace Tests\Feature\Project;
 
 use Tests\TestCase;
+use App\Models\User;
 use Livewire\Livewire;
 use App\Http\Livewire\Project\Project;
 use App\Models\Project as ProjectModel;
@@ -61,5 +62,40 @@ class ProjectTest extends TestCase
             ->assertSee($project->video_code)
             ->assertSee($project->url)
             ->assertSee($project->repo_url);
+    }
+
+    /**
+     * Prueba encargada de corroborar que solo el usuario pueda ver los botones de acciones en proyects.
+     *
+     * @test
+     */
+    public function only_admin_can_see_projects_actions()
+    {
+        $user = User::factory()->create();
+        $project = ProjectModel::factory(3)->create();
+
+        Livewire::actingAs($user)->test(Project::class)
+            ->assertStatus(200)
+            ->assertSee(__('New Project'))
+            ->assertSee(__('Edit Project'))
+            ->assertSee(__('Delete'));
+    }
+
+    /**
+     * Prueba encargada de corroborar que los invitados NO puedan ver los botones de acciones en proyects.
+     *
+     * @test
+     */
+    public function guests_cannot_see_projects_actions()
+    {
+        $this->markTestSkipped('Uncomment This!');
+
+        // Livewire::test(Project::class)
+        //     ->assertStatus(200)
+        //     ->assertDontSee(__('New Project'))
+        //     ->assertDontSee(__('Edit Project'))
+        //     ->assertDontSee(__('Delete'));
+
+        // $this->assertGuest();
     }
 }

@@ -103,5 +103,11 @@
     "Select File": "Seleccionar Archivo",
     "Information saved sucessfully!": "Información guardada exitosamente!",
     "There are no projects to show!": "No hay elementos para mostrar!",
-    "Close": "Cerrar"
+    "Close": "Cerrar",
+    "New Project": "Nuevo Proyecto",
+    "Edit Project": "Editar Proyecto",
+    "Delete Project": "Eliminar Proyecto",
+    "YouTube video player": "Reproductor de YouTube",
+    "See live proyect": "Ver proyecto en vivo",
+    "Repository": "Repositorio"
 }

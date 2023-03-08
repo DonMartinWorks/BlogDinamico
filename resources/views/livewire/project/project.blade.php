@@ -1,7 +1,11 @@
 <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-none">
     <div class="flex items-center">
         <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">Proyectos</h2>
+
         <!-- Boton add -->
+        <x-actions.action title="{{ __('New Project') }}" class="text-gray-800 hover:text-gray-600">
+            <x-icons.add />
+        </x-actions.action>
     </div>
     <div class="space-y-12 lg:space-y-6 lg:grid lg:grid-cols-3 lg:gap-x-6">
         @forelse ($projects as $project)
@@ -16,7 +20,14 @@
                 <h3 class="mt-6 text-base font-semibold text-gray-900">
                     <a href="#" wire:click.prevent="loadProject({{ $project->id }})">{{ $project->name }}</a>
                 </h3>
+
                 <!-- Boton edit and delete -->
+                <div class="flex justify-center text-center mt-3" x-data>
+                    <x-actions.action title="{{ __('Edit Project') }}" class="text-gray-800 hover:text-gray-600">
+                        <x-icons.pencil />
+                    </x-actions.action>
+                    <x-actions.delete eventName="deleteProject" :object="$project" />
+                </div>
             </div>
         @empty
             <h3>{{ __('There are no projects to show!') }}</h3>
@@ -49,30 +60,34 @@
                             <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
                                 {{ $currentProject->name }}
                             </h3>
-                            <div class="mt-2">
+
+                            <div class="mt-4">
                                 <p class="text-sm text-gray-500">
                                     {{ $currentProject->description }}
                                 </p>
                             </div>
+
                             <div class="mt-2">
                                 @if (!$currentProject->video_link)
                                     <div
                                         class="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                                        <img src="{{ asset('/projects/default-img-project.jpg') }}" alt="Project Image"
+                                        <img src="{{ asset('/projects/default-img-project.jpg') }}"
+                                            alt="{{ __('Project Image') }}"
                                             class="w-full h-full object-center object-cover">
                                     </div>
                                 @else
                                     <iframe class="w-full" width="560" height="315"
                                         src="https://www.youtube.com/embed/{{ $currentProject->video_code }}"
-                                        title="YouTube video player" frameborder="0"
+                                        title="{{ __('YouTube video player') }}" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
                                 @endif
                             </div>
+
                             <div class="flex mt-2">
                                 @if ($currentProject->url)
-                                    <a href="{{ $currentProject->url }}" class="text-gray-800 hover:text-gray-600"
-                                        title="Ver proyecto en vivo" target="_blank">
+                                    <a href="{{ $currentProject->url }}" class="text-purple-800 hover:text-purple-600"
+                                        title="{{ __('See live proyect') }}" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -80,9 +95,11 @@
                                         </svg>
                                     </a>
                                 @endif
+
                                 @if ($currentProject->repo_url)
-                                    <a href="{{ $currentProject->repo_url }}" class="text-gray-800 hover:text-gray-600"
-                                        title="Repositorio" target="_blank">
+                                    <a href="{{ $currentProject->repo_url }}"
+                                        class="text-purple-800 hover:text-purple-600" title="{{ __('Repository') }}"
+                                        target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -95,7 +112,7 @@
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <button type="button"
-                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:ml-3 sm:w-auto sm:text-sm"
                             @click="open = false">
                             {{ __('Close') }}
                         </button>
