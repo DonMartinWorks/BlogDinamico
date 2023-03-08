@@ -3,7 +3,8 @@
         <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">Proyectos</h2>
 
         <!-- Boton add -->
-        <x-actions.action title="{{ __('New Project') }}" class="text-gray-800 hover:text-gray-600">
+        <x-actions.action wire:click.prevent="create" title="{{ __('New Project') }}"
+            class="text-gray-800 hover:text-gray-600">
             <x-icons.add />
         </x-actions.action>
     </div>
@@ -23,7 +24,7 @@
 
                 <!-- Boton edit and delete -->
                 <div class="flex justify-center text-center mt-3" x-data>
-                    <x-actions.action title="{{ __('Edit Project') }}" class="text-gray-800 hover:text-gray-600">
+                    <x-actions.action title="{{ __('Edit Project') }}: {{ $project->name}}" class="text-gray-800 hover:text-gray-600">
                         <x-icons.pencil />
                     </x-actions.action>
                     <x-actions.delete eventName="deleteProject" :object="$project" />
@@ -123,4 +124,7 @@
     </div>
 
     <!-- SlideOver -->
+    <x-modal.slideover>
+        <x-forms.create-project :currentProject="$currentProject" :imageFile="$imageFile" />
+    </x-modal.slideover>
 </div>

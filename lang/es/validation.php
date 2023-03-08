@@ -216,6 +216,8 @@ return [
         'link'                     => 'enlace',
         'cvFile'                   => 'Archivo del CV',
         'imageFile'                => 'Archivo de Imagen',
+        'video_link'               => 'Enlace de video',
+        'repo_url'                 => 'Url de repositorio'
     ],
 
     'custom' => [
