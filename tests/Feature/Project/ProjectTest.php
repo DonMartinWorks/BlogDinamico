@@ -9,6 +9,8 @@ use App\Http\Livewire\Project\Project;
 use App\Models\Project as ProjectModel;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectTest extends TestCase
 {
@@ -97,5 +99,41 @@ class ProjectTest extends TestCase
         //     ->assertDontSee(__('Delete'));
 
         // $this->assertGuest();
+    }
+
+    /**
+     * Prueba encargada de corroborar que solo el usuario pueda crear un nuevo project.
+     *
+     * @test
+     */
+    public function admin_can_add_a_project()
+    {
+        $user = User::factory()->create();
+        $image = UploadedFile::fake()->image('project.jpg');
+        Storage::fake('projects');
+
+        Livewire::actingAs($user)->test(Project::class)
+            ->set('currentProject.name', 'Super Project')
+            ->set('currentProject.description', 'Lorem Ipsum is simply dummy')
+            ->set('imageFile', $image)
+            ->set('currentProject.video_link', 'https://www.youtube.com/watch?v=Cga7vReLoNc')
+            ->set('currentProject.url', 'https://www.facebook.com/')
+            ->set('currentProject.repo_url', 'https://github.com/DonMartinWorks/BlogDinamico')
+            ->call('save');
+
+        $newProject = ProjectModel::first();
+
+        $this->assertDatabaseHas('projects', [
+            'id' => $newProject->id,
+            'name' => 'Super Project',
+            'description' => 'Lorem Ipsum is simply dummy',
+            'image' => $newProject->image,
+            'url' => $newProject->url,
+            'video_link' => $newProject->video_link,
+            'repo_url' => $newProject->repo_url,
+        ]);
+
+        //Corroborar que se guardo la imagen
+        Storage::disk('projects')->assertExists($newProject->image);
     }
 }
