@@ -16,6 +16,8 @@ class Project extends Component
     public ProjectModel $currentProject;
     public bool $openModal = false;
 
+    protected $listeners = ['deleteProject'];
+
     protected $rules = [
         'currentProject.name' => 'required|max:100',
         'currentProject.description' => 'required|max:450',
@@ -73,6 +75,16 @@ class Project extends Component
         $this->reset(['imageFile', 'openSlideOver']);
 
         $this->notify(__('Project saved successfully!'));
+    }
+
+    public function deleteProject(ProjectModel $project)
+    {
+        //Primero se elimina la imagen.
+        $this->deleteFile('projects', $project->image);
+
+        $project->delete();
+
+        $this->notify(__('Project has been deleted.'), 'deleteMessage');
     }
 
     public function render()

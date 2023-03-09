@@ -173,4 +173,30 @@ class ProjectTest extends TestCase
 
         Storage::disk('projects')->assertExists($project->image);
     }
+
+    /**
+     * Prueba encargada de corroborar que solo el usuario pueda eliminar un project existente.
+     *
+     * @test
+     */
+    public function admin_can_delete_a_project()
+    {
+        $user = User::factory()->create();
+        $project = ProjectModel::factory()->create();
+        $img = UploadedFile::fake()->image('mysuperimg.jpg');
+        Storage::fake('projects');
+
+        Livewire::actingAs($user)->test(Project::class)
+            ->call('loadProject', $project->id)
+            ->set('imageFile', $img)
+            ->call('save');
+
+        $project->refresh();
+
+        Livewire::actingAs($user)->test(Project::class)
+            ->call('deleteProject', $project->id);
+
+        $this->assertDatabaseMissing('projects', ['id' => $project->id]);
+        Storage::disk('projects')->assertMissing($project->image);
+    }
 }

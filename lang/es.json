@@ -114,5 +114,7 @@
     "Verifying image...": "Verificando la imagen...",
     "Video Link": "Link del video",
     "Repository Url": "Ruta del repositorio",
-    "Web page path": "Ruta de la pagina web"
+    "Web page path": "Ruta de la pagina web",
+    "Project saved successfully!": "Proyecto guardado exitosamente!",
+    "Project has been deleted.": "Proyecto ha sido eliminado correctamente."
 }
