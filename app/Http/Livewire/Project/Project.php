@@ -40,6 +40,11 @@ class Project extends Component
         }
 
         $this->openModal = $modal;
+
+        //Si modal es falso es por que se va a editar el project
+        if (!$modal) {
+            $this->openSlide();
+        }
     }
 
     public function create()

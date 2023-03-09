@@ -136,4 +136,41 @@ class ProjectTest extends TestCase
         //Corroborar que se guardo la imagen
         Storage::disk('projects')->assertExists($newProject->image);
     }
+
+    /**
+     * Prueba encargada de corroborar que solo el usuario pueda editar un project existente.
+     *
+     * @test
+     */
+    public function admin_can_edit_a_project()
+    {
+        $user = User::factory()->create();
+        $project = ProjectModel::factory()->create();
+        $img = UploadedFile::fake()->image('mysuperimg.jpg');
+        Storage::fake('projects');
+
+        Livewire::actingAs($user)->test(Project::class)
+            ->call('loadProject', $project->id)
+            ->set('currentProject.name', 'My super project updated')
+            ->set('currentProject.description', 'Software Developed with Laravel PHP and a lot of love')
+            ->set('imageFile', $img)
+            ->set('currentProject.video_link', 'https://www.youtube.com/watch?v=CRpsb5xCZLw&t=179s')
+            ->set('currentProject.url', 'https://www.google.cl/')
+            ->set('currentProject.repo_url', 'https://github.com/DonMartinWorks/BlogDinamico')
+            ->call('save');
+
+        $project->refresh();
+
+        $this->assertDatabaseHas('projects', [
+            'id' => $project->id,
+            'name' => 'My super project updated',
+            'description' => 'Software Developed with Laravel PHP and a lot of love',
+            'image' => $project->image,
+            'video_link' => $project->video_link,
+            'url' => $project->url,
+            'repo_url' => 'https://github.com/DonMartinWorks/BlogDinamico',
+        ]);
+
+        Storage::disk('projects')->assertExists($project->image);
+    }
 }

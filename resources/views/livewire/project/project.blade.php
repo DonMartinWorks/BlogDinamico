@@ -24,7 +24,7 @@
 
                 <!-- Boton edit and delete -->
                 <div class="flex justify-center text-center mt-3" x-data>
-                    <x-actions.action title="{{ __('Edit Project') }}: {{ $project->name}}" class="text-gray-800 hover:text-gray-600">
+                    <x-actions.action wire:click.prevent="loadProject({{ $project->id }}, false)" title="{{ __('Edit Project') }}: {{ $project->name}}" class="text-gray-800 hover:text-gray-600">
                         <x-icons.pencil />
                     </x-actions.action>
                     <x-actions.delete eventName="deleteProject" :object="$project" />
