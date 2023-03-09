@@ -116,5 +116,7 @@
     "Repository Url": "Ruta del repositorio",
     "Web page path": "Ruta de la pagina web",
     "Project saved successfully!": "Proyecto guardado exitosamente!",
-    "Project has been deleted.": "Proyecto ha sido eliminado correctamente."
+    "Project has been deleted.": "Proyecto ha sido eliminado correctamente.",
+    "Show More": "Ver Más",
+    "Show Less": "Ver Menos"
 }

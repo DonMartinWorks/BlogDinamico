@@ -38,6 +38,22 @@
     </div>
 
     <!-- Boton Mostrar mas / Mostrar menos -->
+    <div class="flex justify-center mt-8 items-center space-x-2">
+        @if ($counter < $this->total)
+            <button wire:click="showMore" type="button"
+                class="px-3 py-3 border rounded-xl bg-gray-800 text-white hover:border-red-600 hover:bg-red-400"
+                title="{{ __('Show More') }}">
+                <x-icons.glass-plus />
+
+            </button>
+            @endif
+            @if ($counter > 3)
+            <a href="#" wire:click.prevent="showLess" class="px-3 py-3 border rounded-xl bg-gray-800 text-white hover:border-red-600 hover:bg-red-400"
+            target="_blank" title="{{ __('Show Less') }}">
+            <x-icons.glass-minus />
+            </a>
+        @endif
+    </div>
 
     <!-- Info Modal -->
     <div x-data="{ open: @entangle('openModal').defer }" @keydown.window.escape="open = false" x-show="open" class="relative z-10"
