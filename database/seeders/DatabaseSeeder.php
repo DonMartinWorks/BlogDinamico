@@ -20,9 +20,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'Usuario Administrador',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('Admin123'),
+            'name' => 'Usuario Administrador Blog',
+            'email' => 'blog@dinamico.com'
         ]);
 
         Navitem::factory()->create([
