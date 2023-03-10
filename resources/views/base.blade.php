@@ -33,29 +33,13 @@
     <!-- Footer -->
     <section class="bg-gray-900">
         <div class="flex justify-center pt-10">
-            <h2 class="text-2xl font-extrabold text-gray-500">Contáctame</h2>
+            <h2 class="text-2xl font-extrabold text-gray-500">{{__('Contact Me')}}</h2>
         </div>
         <div class="max-w-screen-xl px-4 py-3 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+
                 <!-- livewire component -->
-                <div class="px-5 py-2" id="{{ __('contact') }}">
-
-                    <a href="mailto:email@email.com"
-                        class="flex text-base leading-6 text-emerald-600 hover:text-white space-y-1">
-                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="w-6 h-6">
-                            <path
-                                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                            <path
-                                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                        </svg>
-
-                        <span class="pl-3 text-lg">email@email.com</span>
-                    </a>
-                    <!-- Boton edit -->
-
-                    <!-- SlideOver -->
-                </div>
+                <livewire:contact.contact />
             </nav>
 
             <!-- livewire component -->
