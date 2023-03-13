@@ -85,4 +85,34 @@ class ContactTest extends TestCase
             'email' => 'jhon@doe.com'
         ]);
     }
+
+    /**
+     * Esta prueba corrobora que la regla del email sea valida y funcional del contacto.
+     *
+     * @test
+     */
+    public function contact_email_is_required()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Contact::class)
+            ->set('contact.email', '')
+            ->call('edit')
+            ->assertHasErrors(['contact.email' => 'required']);
+    }
+
+    /**
+     * Esta prueba corrobora que el email sea valida.
+     *
+     * @test
+     */
+    public function contact_email_must_be_a_valid_email()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(Contact::class)
+            ->set('contact.email', 'jhon@doe')
+            ->call('edit')
+            ->assertHasErrors(['contact.email' => 'email']);
+    }
 }
