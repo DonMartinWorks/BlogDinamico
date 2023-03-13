@@ -32,8 +32,8 @@
 
     <!-- Footer -->
     <section class="bg-gray-900">
-        <div class="flex justify-center pt-10">
-            <h2 class="text-2xl font-extrabold text-gray-500">{{__('Contact Me')}}</h2>
+        <div class="flex justify-center pt-10 pb-3">
+            <h2 class="text-2xl font-extrabold text-sky-500">{{ __('Contact Me') }}</h2>
         </div>
         <div class="max-w-screen-xl px-4 py-3 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
@@ -44,15 +44,17 @@
 
             <!-- livewire component -->
             <div class="flex justify-center mt-8 space-x-6">
-                <a href="#" target="_blank" class="text-4xl text-emerald-600 hover:text-purple-400">
+                <a href="#" target="_blank" class="text-4xl text-white hover:text-sky-500">
                     <span class="sr-only">Linkedin</span>
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="#" target="_blank" class="text-4xl text-emerald-600 hover:text-purple-400">
+
+                <a href="#" target="_blank" class="text-4xl text-white hover:text-sky-500">
                     <span class="sr-only">Github</span>
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="#" target="_blank" class="text-4xl text-emerald-600 hover:text-purple-400">
+
+                <a href="#" target="_blank" class="text-4xl text-white hover:text-sky-500">
                     <span class="sr-only">Twitter</span>
                     <i class="fa-brands fa-twitter"></i>
                 </a>
@@ -64,7 +66,9 @@
             <!-- livewire component  -->
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-purple-400">Link 1</a>
+
                 <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-purple-400">Link 2</a>
+
                 <a href="#" class="font-medium px-5 py-2 text-gray-200 hover:text-purple-400">Link 3</a>
                 <!-- Boton Logout -->
             </nav>

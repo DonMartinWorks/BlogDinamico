@@ -17,7 +17,7 @@
 
     <!-- Boton edit -->
     <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}"
-        class="flex items-center justify-center py-3 px-5 md:px-10 text-gray-300 hover:text-sky-500">
+        class="flex items-center justify-center py-3 px-5 md:px-10 text-yellow-300 hover:text-purple-400">
         <x-icons.pencil />
     </x-actions.action>
 
