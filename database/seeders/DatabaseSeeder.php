@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use App\Models\Navitem;
 use App\Models\Project;
+use App\Models\SocialLink;
 use Illuminate\Database\Seeder;
 use App\Models\PersonalInformation;
 
@@ -44,5 +46,18 @@ class DatabaseSeeder extends Seeder
 
         //Project
         Project::factory(3)->create();
+
+        //SocialLink
+        SocialLink::factory()->create([
+            'name' => 'Laravel',
+            'url' => 'https://laravel.com/',
+            'icon' => 'fa-brands fa-laravel',
+        ]);
+
+        SocialLink::factory()->create([
+            'name' => 'Youtube',
+            'url' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+            'icon' => 'fa-brands fa-youtube',
+        ]);
     }
 }

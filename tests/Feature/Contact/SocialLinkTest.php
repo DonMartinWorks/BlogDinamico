@@ -4,7 +4,9 @@ namespace Tests\Feature\Contact;
 
 use Tests\TestCase;
 use Livewire\Livewire;
+use App\Http\Livewire\Contact\SocialLink;
 use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\SocialLink as SocialLinkModel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SocialLinkTest extends TestCase
