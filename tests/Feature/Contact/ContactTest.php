@@ -65,4 +65,24 @@ class ContactTest extends TestCase
 
         // $this->assertGuest();
     }
+
+    /**
+     * Esta prueba corrobora que el admin puede editar el email.
+     *
+     * @test
+     */
+    public function admin_can_edit_contact_email()
+    {
+        $user = User::factory()->create();
+        $contact = PersonalInformation::factory()->create();
+
+        Livewire::actingAs($user)->test(Contact::class)
+            ->set('contact.email', 'jhon@doe.com')
+            ->call('edit');
+
+        $this->assertDatabaseHas('personal_information', [
+            'id' => $contact->id,
+            'email' => 'jhon@doe.com'
+        ]);
+    }
 }

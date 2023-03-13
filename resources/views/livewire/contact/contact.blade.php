@@ -2,7 +2,7 @@
 
     @if ($contact->email)
         <a href="mailto:{{ $contact->email }}"
-            class="flex text-base leading-6 text-emerald-600 hover:text-white space-y-1">
+            class="flex text-base leading-6 text-gray-300 hover:text-sky-500 space-y-1">
             <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                 <path
@@ -17,9 +17,12 @@
 
     <!-- Boton edit -->
     <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}"
-        class="flex items-center justify-center py-3 px-5 md:px-10 text-white hover:text-sky-500">
+        class="flex items-center justify-center py-3 px-5 md:px-10 text-gray-300 hover:text-sky-500">
         <x-icons.pencil />
     </x-actions.action>
 
     <!-- SlideOver -->
+    <x-modal.slideover>
+        <x-forms.edit-contact-email />
+    </x-modal.slideover>
 </div>
