@@ -14,7 +14,12 @@
     @else
         <h3 class="text-gray-400">{{ __('There is no contact email to show!') }}</h3>
     @endif
+
     <!-- Boton edit -->
+    <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}"
+        class="flex items-center justify-center py-3 px-5 md:px-10 text-white hover:text-sky-500">
+        <x-icons.pencil />
+    </x-actions.action>
 
     <!-- SlideOver -->
 </div>
