@@ -4,7 +4,7 @@
             <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
                 <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                     <div class="flex items-center justify-between w-full md:w-auto">
-                        <a href="#">
+                        <a href="{{ route('login') }}" title="{{ __('Login') }}">
                             <span class="sr-only">Workflow</span>
                             <img alt="Workflow" class="h-10 w-auto sm:h-12" src="{{ asset('/hero/coding.png') }}">
                         </a>

@@ -10,7 +10,7 @@
             @enderror
         </div>
         <div class="mt-4">
-            <x-primary-button>{{ __('Update Email') }}</x-primary-button>
+            <x-primary-button class="my-6 w-full justify-center py-3">{{ __('Update Email') }}</x-primary-button>
         </div>
     </form>
 </div>
