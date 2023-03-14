@@ -7,7 +7,18 @@
     @empty
         <h3 class="text-gray-400">{{ __('There is no social links to show!') }}</h3>
     @endforelse
+
     <!-- Boton add and edit -->
+    <div class="flex items-center space-x-2">
+        <x-actions.action wire:click.prevent="create" title="{{ __('New') }}"
+            class="text-yellow-300 hover:text-purple-400">
+            <x-icons.add />
+        </x-actions.action>
+
+        <x-actions.action title="{{ __('Edit') }}" class="text-yellow-300 hover:text-purple-400">
+            <x-icons.pencil />
+        </x-actions.action>
+    </div>
 
     <!-- SlideOver -->
 </div>
