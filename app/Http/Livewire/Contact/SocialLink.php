@@ -12,12 +12,24 @@ class SocialLink extends Component
     use Notification, SlideOver;
 
     public SocialLinkModel $socialLink;
+    public $socialLinkSelected = '';
 
     protected $rules = [
         'socialLink.name' => 'required|max:20',
         'socialLink.url' => 'required|url',
         'socialLink.icon' => ['nullable', 'regex:/^(fa-brands|fa-solid)\sfa-[a-z-]+/i'],
     ];
+
+    public function updatedSocialLinkSelected()
+    {
+        $data = SocialLinkModel::find($this->socialLinkSelected);
+
+        if ($data) {
+            $this->socialLink = $data;
+        } else {
+            $this->socialLinkSelected = '';
+        }
+    }
 
     public function mount()
     {
@@ -39,7 +51,7 @@ class SocialLink extends Component
 
         $this->socialLink->save();
 
-        $this->reset('openSlideOver');
+        $this->reset(['openSlideOver', 'socialLinkSelected']);
 
         $this->notify(__('Social link saved successfully!'));
     }

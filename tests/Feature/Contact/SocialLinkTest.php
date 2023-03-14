@@ -93,4 +93,31 @@ class SocialLinkTest extends TestCase
             'icon' => 'fa-brands fa-youtube'
         ]);
     }
+
+    /**
+     * Esta prueba corrobora que el usuario pueda crear un social link.
+     *
+     * @test
+     */
+    public function admin_can_edit_a_social_link()
+    {
+        $user = User::factory()->create();
+        $socialLink = SocialLinkModel::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLinkSelected', $socialLink->id)
+            ->set('socialLink.name', 'Github')
+            ->set('socialLink.url', 'https://github.com/DonMartinWorks')
+            ->set('socialLink.icon', 'fa-brands fa-github')
+            ->call('save');
+
+        $socialLink->refresh();
+
+        $this->assertDatabaseHas('social_links', [
+            'id' => $socialLink->id,
+            'name' => 'Github',
+            'url' => 'https://github.com/DonMartinWorks',
+            'icon' => $socialLink->icon,
+        ]);
+    }
 }
