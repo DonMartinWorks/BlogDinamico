@@ -1,6 +1,6 @@
 <div class="flex justify-center mt-8 space-x-6">
     @forelse($socialLinks as $socialLink)
-        <a href="{{ $socialLink->url }}" target="_blank" class="text-4xl text-gray-400 hover:text-red-400">
+        <a href="{{ $socialLink->url }}" target="_blank" class="text-4xl text-gray-300 hover:text-sky-500">
             <span class="{{ $socialLink->icon ? 'sr-only' : '' }}">{{ $socialLink->name }}</span>
             <i class="{{ $socialLink->icon }}"></i>
         </a>
@@ -21,4 +21,9 @@
     </div>
 
     <!-- SlideOver -->
+    <x-modal.slideover>
+        <div class="w-full sm:max-w-md px-6 py-4">
+            <x-forms.create-or-edit-social-link-form />
+        </div>
+    </x-modal.slideover>
 </div>

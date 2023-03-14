@@ -71,4 +71,26 @@ class SocialLinkTest extends TestCase
 
         // $this->assertGuest();
     }
+
+    /**
+     * Esta prueba corrobora que el usuario pueda crear un social link.
+     *
+     * @test
+     */
+    public function admin_can_add_a_social_link()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLink.name', 'Youtube')
+            ->set('socialLink.url', 'https://youtube.com/profile')
+            ->set('socialLink.icon', 'fa-brands fa-youtube')
+            ->call('save');
+
+        $this->assertDatabaseHas('social_links', [
+            'name' => 'Youtube',
+            'url' => 'https://youtube.com/profile',
+            'icon' => 'fa-brands fa-youtube'
+        ]);
+    }
 }
