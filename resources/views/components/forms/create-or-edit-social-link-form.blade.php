@@ -38,5 +38,9 @@
 
     <div class="mt-4 flex items-center justify-between">
         <x-primary-button class="my-6 w-full justify-center py-3">{{ __('Save') }}</x-primary-button>
+
+        <div class="ml-5">
+            {{ $slot }}
+        </div>
     </div>
 </form>
