@@ -137,4 +137,80 @@ class SocialLinkTest extends TestCase
 
         $this->assertDatabaseMissing('social_links', ['id' => $socialLink->id]);
     }
+
+    /**
+     * Esta prueba corrobora que el nombre de social link es requerido.
+     *
+     * @test
+     */
+    public function name_is_required()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLink.name', '')
+            ->call('save')
+            ->assertHasErrors(['socialLink.name' => 'required']);
+    }
+
+    /**
+     * Esta prueba corrobora que el nombre de social link no supere los 20 caracteres.
+     *
+     * @test
+     */
+    public function name_must_have_a_maximum_of_twenty_characters()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLink.name', '123456789012345678901')
+            ->call('save')
+            ->assertHasErrors(['socialLink.name' => 'max']);
+    }
+
+    /**
+     * Esta prueba corrobora que la url de social link es requerido.
+     *
+     * @test
+     */
+    public function url_is_required()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLink.url', '')
+            ->call('save')
+            ->assertHasErrors(['socialLink.url' => 'required']);
+    }
+
+    /**
+     * Esta prueba corrobora que la url de social link sea un link valido.
+     *
+     * @test
+     */
+    public function url_must_be_a_valid_url()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLink.url', 'ertretretr')
+            ->call('save')
+            ->assertHasErrors(['socialLink.url' => 'url']);
+    }
+
+    /**
+     * Esta prueba corrobora que el iccno sea un icono valido
+     * de font awesome (Ejemplo: fa-brands fa-twitter).
+     *
+     * @test
+     */
+    public function icon_must_match_with_regex()
+    {
+        $user = User::factory()->create();
+
+        Livewire::actingAs($user)->test(SocialLink::class)
+            ->set('socialLink.icon', 'fa-fa fa-face-smile-wink')
+            ->call('save')
+            ->assertHasErrors(['socialLink.icon' => 'regex']);
+    }
 }
