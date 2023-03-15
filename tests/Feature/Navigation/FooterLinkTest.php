@@ -11,6 +11,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class FooterLinkTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * Esta prueba corrobora que el componente (FOOTER LINK) sea visible en la vista.
      *

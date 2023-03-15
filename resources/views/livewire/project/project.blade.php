@@ -1,6 +1,6 @@
 <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-none">
     <div class="flex items-center">
-        <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">{{__('Projects')}}</h2>
+        <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">{{ __('Projects') }}</h2>
 
         <!-- Boton add -->
         <x-actions.action wire:click.prevent="create" title="{{ __('New Project') }}"
@@ -18,6 +18,7 @@
                             class="w-full h-full object-center object-cover">
                     </a>
                 </div>
+
                 <h3 class="mt-6 text-base font-semibold text-gray-900">
                     <a href="#" wire:click.prevent="loadProject({{ $project->id }})">{{ $project->name }}</a>
                 </h3>
@@ -29,6 +30,7 @@
                         class="text-gray-800 hover:text-gray-600 mr-2">
                         <x-icons.pencil />
                     </x-actions.action>
+
                     <x-actions.delete eventName="deleteProject" :object="$project" />
                 </div>
             </div>
@@ -46,11 +48,12 @@
                 <x-icons.glass-plus />
 
             </button>
-            @endif
-            @if ($counter > 3)
-            <a href="#" wire:click.prevent="showLess" class="px-3 py-3 border rounded-xl bg-gray-800 text-white hover:border-red-600 hover:bg-red-400"
-            target="_blank" title="{{ __('Show Less') }}">
-            <x-icons.glass-minus />
+        @endif
+        @if ($counter > 3)
+            <a href="#" wire:click.prevent="showLess"
+                class="px-3 py-3 border rounded-xl bg-gray-800 text-white hover:border-red-600 hover:bg-red-400"
+                target="_blank" title="{{ __('Show Less') }}">
+                <x-icons.glass-minus />
             </a>
         @endif
     </div>
@@ -104,7 +107,8 @@
 
                             <div class="flex mt-2">
                                 @if ($currentProject->url)
-                                    <a href="{{ $currentProject->url }}" class="text-gray-800 hover:text-purple-600 mr-2"
+                                    <a href="{{ $currentProject->url }}"
+                                        class="text-gray-800 hover:text-purple-600 mr-2"
                                         title="{{ __('See live proyect') }}" target="_blank">
                                         <x-icons.world />
                                     </a>
