@@ -52,6 +52,8 @@ class Navigation extends Component
         //Cerrar el SlideOver
         $this->reset('openSlideOver');
 
+        $this->emitTo('navigation.footer-link', 'itemsHaveBeenUpdated');
+
         //Notificacion
         $this->notify(__('Menu items have been updated!'));
     }
@@ -62,6 +64,8 @@ class Navigation extends Component
 
         //Recargar los  items
         $this->mount();
+
+        $this->emitTo('navigation.footer-link', 'itemsHaveBeenUpdated');
 
         //Notificacion
         $this->notify(__('Menu item have been deleted!'), 'deleteMessage');
