@@ -3,10 +3,12 @@
         <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">{{ __('Projects') }}</h2>
 
         <!-- Boton add -->
-        <x-actions.action wire:click.prevent="create" title="{{ __('New Project') }}"
-            class="text-gray-800 hover:text-gray-600">
-            <x-icons.add />
-        </x-actions.action>
+        @auth
+            <x-actions.action wire:click.prevent="create" title="{{ __('New Project') }}"
+                class="text-gray-800 hover:text-gray-600">
+                <x-icons.add />
+            </x-actions.action>
+        @endauth
     </div>
     <div class="space-y-12 lg:space-y-6 lg:grid lg:grid-cols-3 lg:gap-x-6">
         @forelse ($projects as $project)
@@ -24,15 +26,17 @@
                 </h3>
 
                 <!-- Boton edit and delete -->
-                <div class="flex justify-center text-center mt-3" x-data>
-                    <x-actions.action wire:click.prevent="loadProject({{ $project->id }}, false)"
-                        title="{{ __('Edit Project') }}: {{ $project->name }}"
-                        class="text-gray-800 hover:text-gray-600 mr-2">
-                        <x-icons.pencil />
-                    </x-actions.action>
+                @auth
+                    <div class="flex justify-center text-center mt-3" x-data>
+                        <x-actions.action wire:click.prevent="loadProject({{ $project->id }}, false)"
+                            title="{{ __('Edit Project') }}: {{ $project->name }}"
+                            class="text-gray-800 hover:text-gray-600 mr-2">
+                            <x-icons.pencil />
+                        </x-actions.action>
 
-                    <x-actions.delete eventName="deleteProject" :object="$project" />
-                </div>
+                        <x-actions.delete eventName="deleteProject" :object="$project" />
+                    </div>
+                @endauth
             </div>
         @empty
             <h3>{{ __('There are no projects to show!') }}</h3>
@@ -137,7 +141,9 @@
     </div>
 
     <!-- SlideOver -->
-    <x-modal.slideover>
-        <x-forms.create-project :currentProject="$currentProject" :imageFile="$imageFile" />
-    </x-modal.slideover>
+    @auth
+        <x-modal.slideover>
+            <x-forms.create-project :currentProject="$currentProject" :imageFile="$imageFile" />
+        </x-modal.slideover>
+    @endauth
 </div>
