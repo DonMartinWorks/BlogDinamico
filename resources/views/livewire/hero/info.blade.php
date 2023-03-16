@@ -23,16 +23,20 @@
             </div>
 
             <!-- Boton Edit -->
-            <div class="mt-3 sm:mt-0 sm:ml-2">
-                <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}"
-                    class="flex items-center justify-center px-8 py-3 md:py-4 md:px-10 text-emerald-300 hover:text-purple-500">
-                    <x-icons.pencil />
-                </x-actions.action>
-            </div>
+            @auth
+                <div class="mt-3 sm:mt-0 sm:ml-2">
+                    <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}"
+                        class="flex items-center justify-center px-8 py-3 md:py-4 md:px-10 text-emerald-300 hover:text-purple-500">
+                        <x-icons.pencil />
+                    </x-actions.action>
+                </div>
+            @endauth
         </div>
 
         <!-- slideover edit hero -->
-        <x-modal.slideover>
-            <x-forms.edit-hero :info="$info" :imageFile="$imageFile" />
-        </x-modal.slideover>
+        @auth
+            <x-modal.slideover>
+                <x-forms.edit-hero :info="$info" :imageFile="$imageFile" />
+            </x-modal.slideover>
+        @endauth
 </main>

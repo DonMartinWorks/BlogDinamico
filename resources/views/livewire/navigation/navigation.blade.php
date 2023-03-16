@@ -31,17 +31,17 @@
 
                 <!-- Aqui botones edit y add -->
                 <div class="hidden md:flex items-center justify-center space-x-2 ml-4 md:pb-1 lg:p-3">
-                    {{-- auth --}}
-                    <x-actions.action wire:click.prevent="openSlide" class="text-emerald-300 hover:text-purple-400"
-                        title="{{ __('Edit') }}">
-                        <x-icons.pencil />
-                    </x-actions.action>
+                    @auth
+                        <x-actions.action wire:click.prevent="openSlide" class="text-emerald-300 hover:text-purple-400"
+                            title="{{ __('Edit') }}">
+                            <x-icons.pencil />
+                        </x-actions.action>
 
-                    <x-actions.action wire:click.prevent="openSlide(true)"
-                        class="text-emerald-300 hover:text-purple-400" title="{{ __('New') }}">
-                        <x-icons.add />
-                    </x-actions.action>
-                    {{-- auth --}}
+                        <x-actions.action wire:click.prevent="openSlide(true)"
+                            class="text-emerald-300 hover:text-purple-400" title="{{ __('New') }}">
+                            <x-icons.add />
+                        </x-actions.action>
+                    @endauth
                 </div>
             </nav>
         </div>
@@ -97,11 +97,13 @@
     </div>
 
     <!-- slideover add/edit -->
-    <x-modal.slideover>
-        @if ($addNewItem)
-            <livewire:navigation.item />
-        @else
-            <x-forms.edit-items :items="$items" />
-        @endif
-    </x-modal.slideover>
+    @auth
+        <x-modal.slideover>
+            @if ($addNewItem)
+                <livewire:navigation.item />
+            @else
+                <x-forms.edit-items :items="$items" />
+            @endif
+        </x-modal.slideover>
+    @endauth
 </section>
