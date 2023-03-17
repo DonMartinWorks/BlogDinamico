@@ -187,6 +187,12 @@ _Este codigo creará una llave en: `APP_KEY=` exclusiva para el funcionamiento d
 
 ### Hacer funcionar el sistema de testing
 
+_Hacer funcionar TODOS los tests._
+
+```bash
+  php artisan test
+```
+
 _Tambien se puede utilizar el llamado de test con: (llamando al test con su nombre listado abajo)_
 
 -   NavigationTest
