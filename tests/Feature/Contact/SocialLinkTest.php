@@ -62,14 +62,12 @@ class SocialLinkTest extends TestCase
      */
     public function guests_cannot_see_the_social_links_actions()
     {
-        $this->markTestSkipped('Uncomment This!');
+        Livewire::test(SocialLink::class)
+            ->assertStatus(200)
+            ->assertDontSee(__('New'))
+            ->assertDontSee(__('Edit'));
 
-        // Livewire::test(SocialLink::class)
-        //     ->assertStatus(200)
-        //     ->assertDontSee(__('New'))
-        //     ->assertDontSee(__('Edit'));
-
-        // $this->assertGuest();
+        $this->assertGuest();
     }
 
     /**

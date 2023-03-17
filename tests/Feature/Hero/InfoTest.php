@@ -63,13 +63,12 @@ class InfoTest extends TestCase
      */
     public function guests_cannot_see_actions()
     {
-        $this->markTestSkipped('Uncomment This!');
-        //     Livewire::test(Info::class)
-        //         ->assertStatus(200)
-        //         ->assertDontSee(__('Edit'));
+        Livewire::test(Info::class)
+            ->assertStatus(200)
+            ->assertDontSee(__('Edit'));
 
         // ---  Para confirmar la visita como un visitante ---
-        //     $this->assertGuest();
+        $this->assertGuest();
     }
 
     /**
